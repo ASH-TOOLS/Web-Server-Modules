@@ -1,24 +1,31 @@
 function test(){return 'working';}
 
 
-function get_url_params(url){
+function get_url_params(url=''){
+
   
-  if url.includes('?') and url.includes('&')
+  if (url.includes('?')){
 
-    var params_split = url.split('?')[1].split('&');
+    try{
 
-    var params={}
+      var params_split = url.split('?')[1].split('&');
 
-    params_split.forEach(
+      var params={}
 
-      function(value){
+      params_split.forEach(
+
+        function(value){
       
-        key_val = value.split('=')
-        params[key_val[0]] = key_val[1];
-      }
-    )
-    return params;
+          key_val = value.split('=')
+          params[key_val[0]] = key_val[1];
 
-  else{return 'there is no params';}
+        }
+      )
+      return JSON.stringify(params);
+    }
+    catch(e){}
+
+
+  }else{return 'there is no params';}
   
 }
