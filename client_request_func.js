@@ -1,3 +1,6 @@
+function test(){return 'working';}
+
+
 function get_url_params(url){
   
   var params_split = url.split('?')[1].split('&');
