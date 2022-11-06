@@ -1,7 +1,6 @@
-
-function get_url_params(){
+function get_url_params(url){
   
-  var params_split = '/hi?hi=a&b=d'.split('?')[1].split('&');
+  var params_split = url.split('?')[1].split('&');
 
   var params={}
 
